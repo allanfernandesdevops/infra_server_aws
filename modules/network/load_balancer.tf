@@ -74,7 +74,7 @@ resource "aws_lb_listener_rule" "redirect_host_tecnofit" {
 
   condition {
     host_header {      
-      values = ["*.tecnofit.com.br"]
+      values = ["*.tec.com.br"]
     }    
   }
 }
@@ -112,7 +112,7 @@ resource "aws_lb_listener_rule" "host_based_weighted_routing" {
   condition {
     http_header {
       http_header_name = "x-origin-token"
-      values           = ["a15fhIPkgJ2qguZC3vhUdGZfDWoHv69a8FlLz"]
+      values           = ["a15fhIPkgJ2asdfasqguZC3vhUdGZfDWoHv69a8FlLz"]
     }
   }
 }
@@ -174,7 +174,7 @@ resource "aws_lb_listener_rule" "redirect_host_tecnofit_443" {
 
   condition {
     host_header {      
-      values = ["*.tecnofit.com.br","pay.academiaevolve.com.br"]
+      values = ["*.tec.com.br","pay.academia.com.br"]
     }    
   }
 }
