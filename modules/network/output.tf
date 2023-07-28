@@ -1,7 +1,3 @@
-output "role_name" {
-  value       = aws_iam_instance_profile.profile-ec2.name
-}
-
 output "security_group_instance_sistema" {
   value       =  aws_security_group.sg_instance_sistema.id
 }

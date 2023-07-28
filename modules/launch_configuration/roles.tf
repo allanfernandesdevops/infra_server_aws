@@ -23,44 +23,6 @@ resource "aws_iam_role" "launch_configuration" {
 EOF
 }
 
-resource "aws_iam_policy" "custom_bucket_encryption_tf" {
-  name        = "custom_bucket_encryption_tf"
-  path        = "/"
-  
-  policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": "s3:GetEncryptionConfiguration",
-            "Resource": "*"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObjectAcl",
-                "s3:GetObject",
-                "s3:GetEncryptionConfiguration",
-                "s3:GetObjectVersionTagging",
-                "s3:GetObjectVersionAcl",
-                "s3:GetBucketPolicy",
-                "s3:GetObjectVersion"
-            ],
-            "Resource": [
-                "arn:aws:s3:::tecnofit-devops-letsencrypt",
-                "arn:aws:s3:::tecnofit-devops-letsencrypt/*",
-                "arn:aws:s3:::tecnofit-devops-executables",
-                "arn:aws:s3:::tecnofit-devops-executables/*"
-            ]
-        }
-    ]
-}
-EOF
-}
-
 resource "aws_iam_policy" "ssm_ec2_paramter_tf" {
   name        = "ssm_ec2_paramter_tf"
   path        = "/"
