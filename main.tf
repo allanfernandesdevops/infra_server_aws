@@ -17,7 +17,6 @@ module "launch_configuration" {
   source = "./modules/launch_configuration/"
   depends_on = [module.network]
   
-  role_name                    = module.network.role_name
   image_id                     = var.image_id
   instance_type                = var.instance_type  
   key_name                     = var.keypair

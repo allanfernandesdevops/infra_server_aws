@@ -60,11 +60,6 @@ resource "aws_iam_role_policy_attachment" "role_policy_attachment" {
   policy_arn = each.value  
 }
 
-resource "aws_iam_role_policy_attachment" "custom_bucket_encryption" {
-  role       = aws_iam_role.launch_configuration.name
-  policy_arn = aws_iam_policy.custom_bucket_encryption_tf.arn
-}
-
 resource "aws_iam_role_policy_attachment" "ssm_ec2_paramter" {
   role       = aws_iam_role.launch_configuration.name
   policy_arn = aws_iam_policy.ssm_ec2_paramter_tf.arn

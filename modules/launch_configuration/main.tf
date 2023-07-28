@@ -5,7 +5,7 @@ resource "aws_launch_configuration" "sistema" {
   associate_public_ip_address = false
   security_groups = ["${var.sg_instance_sistema}"]
   key_name        = var.key_name
-  iam_instance_profile = var.role_name
+  iam_instance_profile = aws_iam_instance_profile.profile-ec2.name
 }
 
 resource "aws_autoscaling_group" "sistema" {

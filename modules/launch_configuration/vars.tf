@@ -10,10 +10,6 @@ variable "sg_instance_sistema" {
   type = string
 }
 
-variable "role_name" {
-  type = string
-}
-
 variable "key_name" {
   type = string
 }
